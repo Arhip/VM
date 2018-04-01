@@ -11,7 +11,7 @@ public class Parser {
     private char commandType = C_EMPTY;
 
     private String command = "";
-    private String reference = "";
+    private String segment = "";
     private int index = 0;
 
     public static final char C_ARITHMETIC = 'A';
@@ -51,7 +51,7 @@ public class Parser {
         lineNumber++;
     }
 
-    public void parseCommandType()
+    private void parseCommandType()
     {
                 if( command.equals("add") ||
                     command.equals("sub") ||
@@ -79,7 +79,7 @@ public class Parser {
                 }
     }
 
-    public void parse()
+    private void parse()
     {
         String[] arguments = cleanLine.split("\\s+");
 
@@ -90,7 +90,7 @@ public class Parser {
         else if(arguments.length == 3)
         {
             command = arguments[0];
-            reference = arguments[1];
+            segment = arguments[1];
             index = Integer.parseInt(arguments[2]);
         }
 
@@ -99,6 +99,21 @@ public class Parser {
     public char getCommandType()
     {
         return this.commandType;
+    }
+
+    public String getCommand()
+    {
+        return this.command;
+    }
+
+    public String getSegment()
+    {
+        return  this.segment;
+    }
+
+    public int getIndex()
+    {
+        return this.index;
     }
 
     private void cleanLine() {

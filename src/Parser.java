@@ -87,6 +87,11 @@ public class Parser {
         {
             command = arguments[0];
         }
+        else if(arguments.length == 2)
+        {
+            command = arguments[0];
+            segment = arguments[1];
+        }
         else if(arguments.length == 3)
         {
             command = arguments[0];

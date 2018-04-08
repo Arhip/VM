@@ -1,13 +1,25 @@
+/**
+ * CodeWriter translates each line of the VM code into assembly
+ */
+
 public class CodeWriter {
 
     private String translatedCode = "";
     private String fileName = "";
 
+    /**
+     * setFileName setter for fileName
+     * @param fileName
+     */
     public void setFileName(String fileName)
     {
         this.fileName = fileName;
     }
 
+    /**
+     * writeArithmetic translates arithmetic calls
+     * @param command
+     */
     public void writeArithmetic(String command)
     {
         if(command.equals("add")) {
@@ -63,6 +75,12 @@ public class CodeWriter {
 
     }
 
+    /**
+     * writePushPop translates push pop methods
+     * @param command
+     * @param segment
+     * @param index
+     */
     public void writePushPop(String command, String segment, int index)
     {
         if(command.equals("push"))
@@ -152,6 +170,14 @@ public class CodeWriter {
     }
 
     //------------HELPERS-------------
+
+    /**
+     * pushHelper is used for non-constant pushes
+     * @param segment
+     * @param index
+     * @param isPointer
+     * @return
+     */
     private String pushHelper(String segment, int index, boolean isPointer)
     {
         String referenceCode = "";
@@ -175,6 +201,13 @@ public class CodeWriter {
                 writePushD();
     }
 
+    /**
+     * popHelper is used to build the translation for pop calls
+     * @param segment
+     * @param index
+     * @param isPointer
+     * @return
+     */
     private String popHelper(String segment, int index, boolean isPointer)
     {
         String referenceCode = "";
@@ -195,6 +228,11 @@ public class CodeWriter {
                 System.getProperty("line.separator") +
                 writePopTemp();
     }
+
+    /**
+     * arithmeticDoubleIn translation used for 2 input arithmetic calls
+     * @return
+     */
     private String arithmeticDoubleIn() {
         return "@SP" +
                 System.getProperty("line.separator") +
@@ -205,12 +243,21 @@ public class CodeWriter {
                 "A=A-1";
     }
 
+    /**
+     * arithetmicSingleIn translation used for 1 input arithmetic calls
+     * @return
+     */
     private String arithmeticSingleIn() {
         return "@SP" +
                 System.getProperty("line.separator") +
                 "A=M-1";
     }
 
+    /**
+     * arithmeticComparison translation used for boolean arithetmic calls
+     * @param jump
+     * @return
+     */
     private String arithmeticComparison(String jump) {
         return "@SP" +
                 System.getProperty("line.separator") +
@@ -249,6 +296,10 @@ public class CodeWriter {
                 "M=D";
     }
 
+    /**
+     * writePushD standard translation to Push D
+     * @return
+     */
     private String writePushD() {
         return "@SP" +
                 System.getProperty("line.separator") +
@@ -259,6 +310,10 @@ public class CodeWriter {
                 "M=D";
     }
 
+    /**
+     * writePopD standard translation to Pop D
+     * @return
+     */
     private String writePopD() {
         return "@SP" +
                 System.getProperty("line.separator") +
@@ -267,6 +322,10 @@ public class CodeWriter {
                 "D=M";
     }
 
+    /**
+     * writePopTemp used if a temp variable needs to be stored before popping
+     * @return
+     */
     private String writePopTemp()
     {
         return "@R13" +
@@ -282,12 +341,20 @@ public class CodeWriter {
                 "M=D";
     }
 
+    /**
+     * pushConstant used for pushing constants
+     * @return
+     */
     private String pushConstant() {
         return "D=A" +
                 System.getProperty("line.separator") +
                 writePushD();
     }
 
+    /**
+     * getTranslatedCode returns the translated code
+     * @return
+     */
     public String getTranslatedCode()
     {
         return translatedCode;

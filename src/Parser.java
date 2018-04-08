@@ -1,3 +1,7 @@
+/**
+ * Parser.java parses a line of the virtual machine code
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -19,6 +23,11 @@ public class Parser {
     public static final char C_POP = 'O';
     public static final char C_EMPTY = 'N';
 
+    /**
+     * Parser constructor
+     * Opens the input file stream
+     * @param inFileName
+     */
     public Parser(String inFileName){
 
         try {
@@ -32,6 +41,10 @@ public class Parser {
         }
     }
 
+    /**
+     * hasMoreCommands check to see if input file has more commands
+     * @return
+     */
     public boolean hasMoreCommands() {
         if(inputFile.hasNext())
         {
@@ -43,6 +56,9 @@ public class Parser {
         }
     }
 
+    /**
+     * advance processes one line from the virtual machine file
+     */
     public void advance() {
         rawLine = inputFile.nextLine();
         cleanLine();
@@ -51,6 +67,9 @@ public class Parser {
         lineNumber++;
     }
 
+    /**
+     * parseCommandType() parses the command type
+     */
     private void parseCommandType()
     {
                 if( command.equals("add") ||
@@ -79,6 +98,9 @@ public class Parser {
                 }
     }
 
+    /**
+     * parse breaks the input string into three segments
+     */
     private void parse()
     {
         String[] arguments = cleanLine.split("\\s+");
@@ -101,6 +123,7 @@ public class Parser {
 
     }
 
+    //GETTERS AND SETTERS
     public char getCommandType()
     {
         return this.commandType;
@@ -121,6 +144,14 @@ public class Parser {
         return this.index;
     }
 
+    private int getLineNumber()
+    {
+        return lineNumber;
+    }
+
+    /**
+     * cleanLine() is a helper method that removes comments
+     */
     private void cleanLine() {
         String cleanLine = rawLine;
         int commentLocation = cleanLine.indexOf("//");
@@ -131,8 +162,4 @@ public class Parser {
         this.cleanLine = cleanLine;
     }
 
-    private int getLineNumber()
-    {
-        return lineNumber;
-    }
 }

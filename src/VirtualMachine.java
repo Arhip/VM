@@ -1,3 +1,7 @@
+/**
+ * VirtualMachine.java main method for the VM program
+ */
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -37,14 +41,18 @@ public class VirtualMachine {
             System.exit(0);
         }
 
-        // TODO: finish driver as algorithm describes
-
         pass(inputFileName, outputFile);
         System.out.println("done");
         outputFile.close();
     }
 
 
+    /**
+     * pass passes through the VM code, parses and translates.
+     * writes to output file
+     * @param inputFileName
+     * @param outputFile
+     */
     private static void pass(String inputFileName, PrintWriter outputFile) {
         Parser parser = new Parser(inputFileName);
         CodeWriter writer = new CodeWriter();

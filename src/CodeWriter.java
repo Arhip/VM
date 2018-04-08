@@ -1,6 +1,12 @@
 public class CodeWriter {
 
     private String translatedCode = "";
+    private String fileName = "";
+
+    public void setFileName(String fileName)
+    {
+        this.fileName = fileName;
+    }
 
     public void writeArithmetic(String command)
     {
@@ -34,7 +40,7 @@ public class CodeWriter {
                             System.getProperty("line.separator") +
                             "M=!M";
         }
-        else if(command.equals("not")) {
+        else if(command.equals("neg")) {
             translatedCode =
                             "D=0" +
                             System.getProperty("line.separator") +
@@ -44,32 +50,15 @@ public class CodeWriter {
         }
         else if(command.equals("eq"))
         {
-            translatedCode =
-                            arithmeticComparisonOne() +
-                            System.getProperty("line.separator") +
-                            "D;JEQ" +
-                            System.getProperty("line.separator") +
-                            arithmeticComparisonTwo();
+            translatedCode = arithmeticComparison("JEQ");
         }
         else if(command.equals("gt"))
         {
-            translatedCode =
-                    arithmeticComparisonOne() +
-                            System.getProperty("line.separator") +
-                            "D;JGT" +
-                            System.getProperty("line.separator") +
-                            arithmeticComparisonTwo();
-
+            translatedCode = arithmeticComparison("JGT");
         }
         else if(command.equals("lt"))
         {
-            translatedCode =
-                    arithmeticComparisonOne() +
-                            System.getProperty("line.separator") +
-                            "D;JLT" +
-                            System.getProperty("line.separator") +
-                            arithmeticComparisonTwo();
-
+            translatedCode = arithmeticComparison("JLT");
         }
 
     }
@@ -86,7 +75,11 @@ public class CodeWriter {
             }
             else if(segment.equals("static"))
             {
-                translatedCode =
+                translatedCode = "@" + fileName + "." + index +
+                                 System.getProperty("line.separator") +
+                                 "D=M" +
+                                 System.getProperty("line.separator") +
+                                 writePushD();
             }
             else if(segment.equals("this"))
             {
@@ -119,7 +112,42 @@ public class CodeWriter {
         }
         else if(command.equals("pop"))
         {
-
+            if(segment.equals("static"))
+            {
+                translatedCode = "@" + fileName + "." + index +
+                                System.getProperty("line.separator") +
+                                "D=A" +
+                                System.getProperty("line.separator") +
+                                writePopTemp();
+            }
+            else if(segment.equals("this"))
+            {
+                translatedCode = popHelper("THIS", index);
+            }
+            else if(segment.equals("local"))
+            {
+                translatedCode = popHelper("LCL", index);
+            }
+            else if(segment.equals("argument"))
+            {
+                translatedCode = popHelper("ARG", index);
+            }
+            else if(segment.equals("that"))
+            {
+                translatedCode = popHelper("THAT", index);
+            }
+            else if(segment.equals("temp"))
+            {
+                translatedCode = popHelper("R5", index + 5);
+            }
+            else if(segment.equals("pointer") && index == 0)
+            {
+                translatedCode = popHelper("THIS", index);
+            }
+            else if(segment.equals("pointer") && index == 1)
+            {
+                translatedCode = popHelper("THAT", index);
+            }
         }
     }
 
@@ -165,19 +193,7 @@ public class CodeWriter {
                 System.getProperty("line.separator") +
                 referenceCode +
                 System.getProperty("line.separator") +
-                "@R13" +
-                System.getProperty("line.separator") +
-                "M=D" +
-                System.getProperty("line.separator") +
-                writePopD() +
-                System.getProperty("line.separator") +
-                "@R13" +
-                System.getProperty("line.separator") +
-                "A=M" +
-                System.getProperty("line.separator") +
-                "M=D";
-
-
+                writePopTemp();
     }
     private String arithmeticDoubleIn() {
         return "@SP" +
@@ -195,7 +211,7 @@ public class CodeWriter {
                 "A=M-1";
     }
 
-    private String arithmeticComparisonOne() {
+    private String arithmeticComparison(String jump) {
         return "@SP" +
                 System.getProperty("line.separator") +
                 "A=M-1" +
@@ -208,12 +224,11 @@ public class CodeWriter {
                 System.getProperty("line.separator") +
                 "D=D-M" +
                 System.getProperty("line.separator") +
-                "@_1";
-    }
-
-
-    private String arithmeticComparisonTwo() {
-        return "@_2" +
+                "@_1" +
+                System.getProperty("line.separator") +
+                "D;" + jump +
+                System.getProperty("line.separator") +
+                "@_2" +
                 System.getProperty("line.separator") +
                 "D=0" +
                 System.getProperty("line.separator") +
@@ -250,6 +265,21 @@ public class CodeWriter {
                 "AM=M-1" +
                 System.getProperty("line.separator") +
                 "D=M";
+    }
+
+    private String writePopTemp()
+    {
+        return "@R13" +
+                System.getProperty("line.separator") +
+                "M=D" +
+                System.getProperty("line.separator") +
+                writePopD() +
+                System.getProperty("line.separator") +
+                "@R13" +
+                System.getProperty("line.separator") +
+                "A=M" +
+                System.getProperty("line.separator") +
+                "M=D";
     }
 
     private String pushConstant() {

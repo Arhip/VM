@@ -48,6 +48,7 @@ public class VirtualMachine {
     private static void pass(String inputFileName, PrintWriter outputFile) {
         Parser parser = new Parser(inputFileName);
         CodeWriter writer = new CodeWriter();
+        writer.setFileName(inputFileName.substring(0, inputFileName.lastIndexOf('.')));
         while(parser.hasMoreCommands())
         {
             parser.advance();

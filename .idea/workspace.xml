@@ -34,26 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeWriter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CodeWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1753">
-              <caret line="213" column="50" lean-forward="true" selection-start-line="213" selection-start-column="47" selection-end-line="213" selection-end-column="50" />
-              <folding>
-                <element signature="e#151#152#0" expanded="true" />
-                <element signature="e#191#192#0" expanded="true" />
-                <element signature="e#9800#9801#0" expanded="true" />
-                <element signature="e#9837#9838#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VirtualMachine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VirtualMachine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="50" column="87" lean-forward="false" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
+            <state relative-caret-position="200">
+              <caret line="50" column="85" lean-forward="false" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,21 +46,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleAdd.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimpleAdd.vm">
+      <file leaf-file-name="CodeWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CodeWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="1622">
+              <caret line="177" column="22" lean-forward="false" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="22" />
+              <folding>
+                <element signature="e#151#152#0" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#9900#9901#0" expanded="true" />
+                <element signature="e#9937#9938#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StaticTest.asm" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/StaticTest.asm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1200">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleAdd.asm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimpleAdd.asm">
+      <file leaf-file-name="StaticTest.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StaticTest.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="-66">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,7 +95,24 @@
       <find>commandType</find>
       <find>clean</find>
       <find>arithmeticComp</find>
+      <find>jum</find>
+      <find>@</find>
+      <find>local</find>
+      <find>21</find>
+      <find>22</find>
+      <find>36</find>
+      <find>45</find>
+      <find>510</find>
+      <find>1</find>
+      <find>3040</find>
+      <find>32</find>
       <find>commandtype</find>
+      <find>46</find>
+      <find>line.sep</find>
+      <find>pointer</find>
+      <find>@1</find>
+      <find>M-D</find>
+      <find>pop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,14 +127,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Parser.java" />
-        <option value="$PROJECT_DIR$/src/VirtualMachine.java" />
-        <option value="$PROJECT_DIR$/src/CodeWriter.java" />
         <option value="$PROJECT_DIR$/src/SimpleAdd.vm" />
+        <option value="$PROJECT_DIR$/src/CodeWriter.java" />
+        <option value="$PROJECT_DIR$/src/VirtualMachine.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="980" />
     <option name="height" value="1030" />
   </component>
@@ -163,6 +181,9 @@
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arhip\Documents\GitHub\VM\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Arhip\Documents\GitHub\VM\src" />
     </key>
@@ -314,7 +335,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28333333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19895834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -390,8 +411,8 @@
           <folding>
             <element signature="e#151#152#0" expanded="true" />
             <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#9800#9801#0" expanded="true" />
-            <element signature="e#9837#9838#0" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#9937#9938#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -449,18 +470,8 @@
           <folding>
             <element signature="e#151#152#0" expanded="true" />
             <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#9800#9801#0" expanded="true" />
-            <element signature="e#9837#9838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VirtualMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="50" column="87" lean-forward="false" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#9937#9938#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,6 +488,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-275">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BasicTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1963">
+          <caret line="102" column="3" lean-forward="false" selection-start-line="102" selection-start-column="2" selection-end-line="102" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BasicTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -501,16 +528,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PointerTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PointerTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StackTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StackTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VirtualMachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="50" column="85" lean-forward="false" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CodeWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1753">
-          <caret line="213" column="50" lean-forward="true" selection-start-line="213" selection-start-column="47" selection-end-line="213" selection-end-column="50" />
+        <state relative-caret-position="1622">
+          <caret line="177" column="22" lean-forward="false" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="22" />
           <folding>
             <element signature="e#151#152#0" expanded="true" />
             <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#9800#9801#0" expanded="true" />
-            <element signature="e#9837#9838#0" expanded="true" />
+            <element signature="e#9900#9901#0" expanded="true" />
+            <element signature="e#9937#9938#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StaticTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StaticTest.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1200">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

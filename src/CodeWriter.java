@@ -83,31 +83,31 @@ public class CodeWriter {
             }
             else if(segment.equals("this"))
             {
-                translatedCode = pushHelper("THIS", index);
+                translatedCode = pushHelper("THIS", index, false);
             }
             else if(segment.equals("local"))
             {
-                translatedCode = pushHelper("LCL", index);
+                translatedCode = pushHelper("LCL", index, false);
             }
             else if(segment.equals("argument"))
             {
-                translatedCode = pushHelper("ARG", index);
+                translatedCode = pushHelper("ARG", index, false);
             }
             else if(segment.equals("that"))
             {
-                translatedCode = popHelper("THAT", index);
+                translatedCode = popHelper("THAT", index, false);
             }
             else if(segment.equals("temp"))
             {
-                translatedCode = pushHelper("R5", index + 5);
+                translatedCode = pushHelper("R5", index + 5, false);
             }
             else if(segment.equals("pointer") && index == 0)
             {
-                translatedCode = pushHelper("THIS", index);
+                translatedCode = pushHelper("THIS", index, true);
             }
             else if(segment.equals("pointer") && index == 1)
             {
-                translatedCode = pushHelper("THAT", index);
+                translatedCode = pushHelper("THAT", index, true);
             }
         }
         else if(command.equals("pop"))
@@ -122,40 +122,40 @@ public class CodeWriter {
             }
             else if(segment.equals("this"))
             {
-                translatedCode = popHelper("THIS", index);
+                translatedCode = popHelper("THIS", index, false);
             }
             else if(segment.equals("local"))
             {
-                translatedCode = popHelper("LCL", index);
+                translatedCode = popHelper("LCL", index, false);
             }
             else if(segment.equals("argument"))
             {
-                translatedCode = popHelper("ARG", index);
+                translatedCode = popHelper("ARG", index, false);
             }
             else if(segment.equals("that"))
             {
-                translatedCode = popHelper("THAT", index);
+                translatedCode = popHelper("THAT", index, false);
             }
             else if(segment.equals("temp"))
             {
-                translatedCode = popHelper("R5", index + 5);
+                translatedCode = popHelper("R5", index + 5, false);
             }
             else if(segment.equals("pointer") && index == 0)
             {
-                translatedCode = popHelper("THIS", index);
+                translatedCode = popHelper("THIS", index, true);
             }
             else if(segment.equals("pointer") && index == 1)
             {
-                translatedCode = popHelper("THAT", index);
+                translatedCode = popHelper("THAT", index, true);
             }
         }
     }
 
     //------------HELPERS-------------
-    private String pushHelper(String segment, int index)
+    private String pushHelper(String segment, int index, boolean isPointer)
     {
         String referenceCode = "";
-        if(segment.equals("pointer"))
+        if(isPointer)
         {
             referenceCode = "@" + index +
                             System.getProperty("line.separator") +
@@ -175,10 +175,10 @@ public class CodeWriter {
                 writePushD();
     }
 
-    private String popHelper(String segment, int index)
+    private String popHelper(String segment, int index, boolean isPointer)
     {
         String referenceCode = "";
-        if(segment.equals("pointer"))
+        if(isPointer)
         {
             referenceCode = "D=A" +
                     System.getProperty("line.separator") +
